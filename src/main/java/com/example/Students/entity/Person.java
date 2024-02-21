@@ -5,19 +5,24 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 @Entity
 @Table(name = "person")
 public class Person {
 
 	@Column(name = "name")
+	@Schema(description = "name of the user", name ="name", type = "string", example ="Ram")
 	private String name;
 	
 	@Id
 	@Column(name = "rollno")
+	@Schema(description = "roll no of the user", name ="roll", type = "long", example ="01")
 	private Long roll;
 	
 	@Column(name = "address")
+	@Schema(description = "address of the user", name ="address", type = "string", example ="Hyderabad")
 	private String address;
 	
 	public Person() {

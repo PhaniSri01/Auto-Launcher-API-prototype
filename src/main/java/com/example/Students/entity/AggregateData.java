@@ -2,13 +2,18 @@ package com.example.Students.entity;
 
 import org.springframework.stereotype.Component;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Component
 public class AggregateData {
 
+	@Schema(description = "user", name ="person", type = "Person")
 	private Person person;
 	
+	@Schema(description = "marks", name ="marks", type = "Marks")
 	private Marks marks;
 	
+	@Schema(description = "object", name ="object", type = "Object")
 	private Object object;
 	
 	public AggregateData() {

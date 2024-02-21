@@ -14,6 +14,10 @@ import com.example.Students.entity.Person;
 import com.example.Students.service.MarksService;
 import com.example.Students.service.PersonService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 @Controller
 @RequestMapping("/aggregate-data")
 public class StudentController {
@@ -61,6 +65,12 @@ public class StudentController {
 //		return aggregateData;
 //	}
 	
+	@Operation(summary = "Fetches all the aggregate data")
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Success"),
+			@ApiResponse(responseCode = "401", description = "Unauthorised"),
+			@ApiResponse(responseCode = "400", description = "Bad Request"),
+			@ApiResponse(responseCode = "500", description = "Internal Server Error")
+	})
 	@GetMapping("/{id}")
 	@ResponseBody
 	public AggregateData getAggregateData(@PathVariable Long id){

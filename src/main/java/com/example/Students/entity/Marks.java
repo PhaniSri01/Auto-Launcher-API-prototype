@@ -5,30 +5,39 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "marks")
 public class Marks {
 
 	@Id
 	@Column(name = "rollno")
+	@Schema(description = "roll no of the user", name ="roll", type = "long", example ="01")
 	private Long roll;
 	
 	@Column(name = "telugu")
+	@Schema(description = "subject of the user", name ="telugu", type = "long", example ="80")
 	private Long telugu;
 	
 	@Column(name = "hindi")
+	@Schema(description = "subject of the user", name ="hindi", type = "long", example ="80")
 	private Long hindi;
 	
 	@Column(name = "english")
+	@Schema(description = "subject of the user", name ="english", type = "long", example ="80")
 	private Long english;
 	
 	@Column(name = "maths")
+	@Schema(description = "subject of the user", name ="maths", type = "long", example ="80")
 	private Long maths;
 	
 	@Column(name = "science")
+	@Schema(description = "subject of the user", name ="science", type = "long", example ="80")
 	private Long science;
 	
 	@Column(name = "social")
+	@Schema(description = "subject of the user", name ="social", type = "long", example ="80")
 	private Long social;
 
 	public Marks() {
